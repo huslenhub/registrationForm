@@ -1,0 +1,110 @@
+:root{
+    --primaryColor:green;
+    --errorColor:orange;
+    /*
+        css 에서 변수 선언
+    */
+}
+
+html{
+    box-sizing: border-box;
+    /*//박스모델(content padding border margin 설정)*/
+    /*
+        border-box content, padding, margin 포함한 content 크기 계산
+        content-box는 content size 만 계산 
+        일반적으로 패딩 테두리 포함
+    */
+}
+
+body{
+    display: flex;
+    align-items: center;
+    /*수직 중앙 정렬*/
+    justify-content: center;
+    /*수평 중앙 정렬*/
+    min-height: 100vh;
+    /*화면이 유동적으로 움직임*/
+    background-color: white;
+}
+
+#wrapper{
+    width: 420px;
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.2);
+    /*
+        box-shadow 는 그림자 설정
+        0은 수평 그림자
+        4은 수직 그림자
+        14는 그림자 흐림 정도
+        rgba는 그림자색 
+    */
+}
+
+h2{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.inputGroup{
+    padding: 8px 12px;
+    /* 8 위아래로 12좌우로*/
+}
+
+
+.inputGroup label{
+    display: block;
+    padding: 12px 0px;
+}
+
+
+.inputGroup input{
+    display: block;
+    width: 93%;
+    padding: 12px;
+    border: 2px solid #e2e2e2;
+    font-size: 16px;
+
+    /* 
+        블럭은 영역 공간 차지 하지만 인라인은 영역 공간 가지지 못함 즉 가로 세로 설정 불가
+    */
+}
+
+.inputGroup input:focus{
+    outline: none;
+    border-color: #777;
+}
+
+.inputGroup.valid input{
+    border-color: var(--primaryColor);
+}
+
+.inputGroup.invalid input{
+    border-color: var(--errorColor);
+    visibility: visible;
+}
+
+.inputGroup .helperText{
+    display: block;
+    padding-top: 8px;
+}
+
+.inputGroup.valid .helperText{
+    visibility: hidden;
+}
+
+.inputGroup.invalid .helperText{
+    color: var(--errorColor);
+}
+
+#wrapper button{
+    display: block;
+    width: 85%;
+    margin:0 auto;
+    height: 50px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    background-color: var(--primaryColor);
+    border: 2px solid var(--primaryColor);
+    color: white;
+    cursor: pointer;
+
+}
